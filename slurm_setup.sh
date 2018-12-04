@@ -13,6 +13,6 @@ sudo chmod 777 /etc/munge/munge.key
 sudo su root -c 'dd if=/dev/urandom bs=1 count=1024 > /etc/munge/munge.key'
 sudo chmod 400 /etc/munge/munge.key
 sudo chown munge: /etc/munge/munge.key
-sudo scp /etc/munge/munge.key compute-1:/etc/munge
-sudo scp /etc/munge/munge.key compute-2:/etc/munge
-sudo scp /etc/munge/munge.key compute-3:/etc/munge
+sudo scp /etc/munge/munge.key 192.168.1.4:/etc/munge
+sudo scp /etc/munge/munge.key 192.168.1.5:/etc/munge
+sudo scp /etc/munge/munge.key 192.168.1.6:/etc/munge
