@@ -7,5 +7,3 @@ sudo mkdir -p /scratch
 sudo exportfs -ra
 sleep 180s && sudo mount -t nfs 192.168.1.3:/scratch /scratch
 sudo echo "192.168.1.3:/scratch /scratch  nfs defaults 0 0" | sudo tee -a /etc/fstab
-
-sudo -H -u BW840606 bash -c '/local/repository/MungeKey_setup.sh'
