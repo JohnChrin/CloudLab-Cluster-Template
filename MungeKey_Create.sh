@@ -6,11 +6,11 @@ sudo chmod 700 /etc/munge/munge.key
 sudo chown munge: /etc/munge/munge.key
 sudo cp /etc/munge/munge.key /scratch/munge.key
 ssh 192.168.1.4 sudo cp /scratch/munge.key /etc/munge/munge.key
-ssh 192.168.1.4 sudo chown 991 /etc/munge/mung.key
+ssh 192.168.1.4 sudo chown 991 /etc/munge/munge.key
 ssh 192.168.1.5 sudo cp /scratch/munge.key /etc/munge/munge.key
-ssh 192.168.1.5 sudo chown 991 /etc/munge/mung.key
+ssh 192.168.1.5 sudo chown 991 /etc/munge/munge.key
 ssh 192.168.1.6 sudo cp /scratch/munge.key /etc/munge/munge.key
-ssh 192.168.1.6 sudo chown 991 /etc/munge/mung.key
+ssh 192.168.1.6 sudo chown 991 /etc/munge/munge.key
 sudo ssh 192.168.1.4 sudo systemctl enable munge
 sudo ssh 192.168.1.4 sudo systemctl start munge
 sudo ssh 192.168.1.5 sudo systemctl enable munge
