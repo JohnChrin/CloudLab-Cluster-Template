@@ -20,9 +20,9 @@ cd ~ && sudo mkdir slurm
 cd ~/slurm && sudo wget http://www.schedmd.com/download/latest/slurm-18.08.3.tar.bz2
 cd ~/slurm && sudo yum install rpm-build
 cd ~/slurm && sudo rpmbuild -ta slurm-18.08.3.tar.bz2
-sudo mkdir /scratch/slurm-rpms
-sudo cp /root/rpmbuild/RPMS/x86_64/* /scratch/slurm-rpms
-sudo yum --nogpgcheck localinstall /scratch/slurm-rpms/* -y
+#sudo mkdir /scratch/slurm-rpms
+#sudo cp /root/rpmbuild/RPMS/x86_64/* /scratch/slurm-rpms
+sudo yum --nogpgcheck localinstall /root/rpmbuild/RPMS/x86_64/* -y
 
 #metadata configuration
 sudo cp /local/repository/slurm.conf /etc/slurm/slurm.conf
