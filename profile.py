@@ -44,6 +44,8 @@ for i in range( params.n ):
     node.routable_control_ip = "true"
   elif i == 1:
     node = request.XenVM("metadata")
+    node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/install_NFS_client.sh"))
+    node.addService(pg.Execute(shell="sh", command="sleep 3m && sudo /local/repository/install_NFS_client.sh"))
     node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/passwordless.sh"))
     node.addService(pg.Execute(shell="sh", command="sudo /local/repository/passwordless.sh"))
     node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/ssh_setup.sh"))
@@ -64,8 +66,8 @@ for i in range( params.n ):
     node = request.XenVM("compute-" + str(i-2))
     node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/install_NFS_client.sh"))
     node.addService(pg.Execute(shell="sh", command="sleep 3m && sudo /local/repository/install_NFS_client.sh"))
-    node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/install_NFS_head.sh"))
-    node.addService(pg.Execute(shell="sh", command="sudo /local/repository/install_NFS_head.sh"))
+    #node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/install_NFS_head.sh"))
+    #node.addService(pg.Execute(shell="sh", command="sudo /local/repository/install_NFS_head.sh"))
     node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/source_client.sh"))
     node.addService(pg.Execute(shell="sh", command="sudo /local/repository/source_client.sh"))
     node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/passwordless.sh"))
