@@ -1,17 +1,20 @@
 cd ~ && sudo yum install rpm-build gcc openssl openssl-devel libssh2-devel pam-devel numactl numactl-devel hwloc hwloc-devel lua lua-devel readline-devel rrdtool-devel ncurses-devel gtk2-devel man2html libibmad libibumad perl-Switch perl-ExtUtils-MakeMaker -y
 cd ~ && sudo mkdir slurm
-cd ~/slurm && sudo wget -O slurm.tar.bz2 http://www.schedmd.com/download/latest/slurm-18.08.3.tar.bz2
+cd ~/slurm && sudo wget http://www.schedmd.com/download/latest/slurm-18.08.3.tar.bz2
 cd ~/slurm && sudo yum install rpm-build
-cd ~/slurm && sudo rpmbuild -ta slurm.tar.bz2
+cd ~/slurm && sudo rpmbuild -ta slurm-18.08.3.tar.bz2
 sudo mkdir /scratch/slurm-rpms
 sudo cp /root/rpmbuild/RPMS/x86_64/* /scratch/slurm-rpms
 sudo touch /scratch/rpm.fin
-sudo yum --nogpgcheck localinstall /software/slurm-rpms/* -y
+sudo yum --nogpgcheck localinstall /scratch/slurm-rpms/* -y
 sudo cp /local/repository/Becca_Slurm_Conf /scratch/slurm.conf
-sudo mkdir /etc/slurm && sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
-ssh 192.168.1.4 sudo mkdir /etc/slurm && sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
-ssh 192.168.1.5 sudo mkdir /etc/slurm && sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
-ssh 192.168.1.6 sudo mkdir /etc/slurm && sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
+sudo mkdir /etc/slurm/ && sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
+ssh 192.168.1.4 sudo mkdir /etc/slurm/
+ssh 192.168.1.4 sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
+ssh 192.168.1.5 sudo mkdir /etc/slurm/
+ssh 192.168.1.5 sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
+ssh 192.168.1.6 sudo mkdir /etc/slurm/
+ssh 192.168.1.6 sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
 #MAKE SURE THE TIMING ON THIS IS GOOD, slumd MUST BE THERE FIRST
 sudo mkdir /var/spool/slurmctld
 sudo chown slurm: /var/spool/slurmctld
