@@ -8,10 +8,10 @@ sudo cp /root/rpmbuild/RPMS/x86_64/* /scratch/slurm-rpms
 sudo touch /scratch/rpm.fin
 sudo yum --nogpgcheck localinstall /software/slurm-rpms/* -y
 sudo cp /local/repository/Becca_Slurm_Conf /scratch/slurm.conf
-sudo sudo mkdir /etc/slurm && cp /scratch/slurm.conf /root/rpmbuild/BUILD/slurm-18.08.3/etc/slurm.conf
-sudo ssh 192.168.1.4 sudo mkdir /etc/slurm && cp /scratch/slurm.conf /etc/slurm/slurm.conf
-sudo ssh 192.168.1.5 cp /scratch/slurm.conf /etc/slurm/slurm.conf
-sudo ssh 192.168.1.6 cp /scratch/slurm.conf /etc/slurm/slurm.conf
+sudo sudo mkdir /etc/slurm && cp /scratch/slurm.conf /etc/slurm.conf
+sudo ssh 192.168.1.4 sudo mkdir /etc/slurm && sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
+sudo ssh 192.168.1.5 sudo mkdir /etc/slurm && sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
+sudo ssh 192.168.1.6 sudo mkdir /etc/slurm && sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
 #MAKE SURE THE TIMING ON THIS IS GOOD, slumd MUST BE THERE FIRST
 sudo mkdir /var/spool/slurmctld
 sudo chown slurm: /var/spool/slurmctld
