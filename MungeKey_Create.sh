@@ -11,9 +11,9 @@ ssh 192.168.1.5 sudo cp /scratch/munge.key /etc/munge/munge.key
 ssh 192.168.1.5 sudo chown 991 /etc/munge/munge.key
 ssh 192.168.1.6 sudo cp /scratch/munge.key /etc/munge/munge.key
 ssh 192.168.1.6 sudo chown 991 /etc/munge/munge.key
-sudo ssh 192.168.1.4 sudo systemctl enable munge
-sudo ssh 192.168.1.4 sudo systemctl start munge
-sudo ssh 192.168.1.5 sudo systemctl enable munge
-sudo ssh 192.168.1.5 sudo systemctl start munge
-sudo ssh 192.168.1.6 sudo systemctl enable munge
-sudo ssh 192.168.1.6 sudo systemctl start munge
+ssh 192.168.1.4 sudo systemctl enable munge
+ssh 192.168.1.4 sudo systemctl start munge
+ssh 192.168.1.5 sudo systemctl enable munge
+ssh 192.168.1.5 sudo systemctl start munge
+ssh 192.168.1.6 sudo systemctl enable munge
+ssh 192.168.1.6 sudo systemctl start munge
