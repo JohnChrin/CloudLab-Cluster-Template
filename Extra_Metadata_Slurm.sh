@@ -14,38 +14,19 @@ sudo useradd  -m -c "SLURM workload manager" -d /var/lib/slurm -u $SLURMUSER -g 
 sudo yum install epel-release -y
 sudo yum install munge munge-libs munge-devel -y
 
-#get secret key from head and pass to etc/munge
-while [ ! -f /scratch/munge.key ]
-do
-  sleep 5
-done
-sudo cp /scratch/munge.key /etc/munge/munge.key
-sudo chown munge: /etc/munge/munge.key
-sudo chmod 400 /etc/munge/munge.key
-
-#correct permissions
-sudo chown -R munge: /etc/munge/ /var/log/munge/
-sudo chmod 0700 /etc/munge/ /var/log/munge/
-
-sleep 120
-sudo touch /scratch/metakey.fin
-
-#start munge service
-sudo systemctl enable munge
-sudo systemctl start munge
-
 #install slurm dependencies
-sudo yum install openssl openssl-devel pam-devel numactl numactl-devel hwloc hwloc-devel lua lua-devel readline-devel rrdtool-devel ncurses-devel man2html libibmad libibumad -y
-
-while [ ! -f /scratch/rpm.fin ]
-do
-  sleep 10
-done
-sudo yum --nogpgcheck localinstall /software/slurm-rpms/* -y
+cd ~ && sudo yum install rpm-build gcc openssl openssl-devel libssh2-devel pam-devel numactl numactl-devel hwloc hwloc-devel lua lua-devel readline-devel rrdtool-devel ncurses-devel gtk2-devel man2html libibmad libibumad perl-Switch perl-ExtUtils-MakeMaker -y
+cd ~ && sudo mkdir slurm
+cd ~/slurm && sudo wget http://www.schedmd.com/download/latest/slurm-18.08.3.tar.bz2
+cd ~/slurm && sudo yum install rpm-build
+cd ~/slurm && sudo rpmbuild -ta slurm-18.08.3.tar.bz2
+sudo mkdir /scratch/slurm-rpms
+sudo cp /root/rpmbuild/RPMS/x86_64/* /scratch/slurm-rpms
+sudo yum --nogpgcheck localinstall /scratch/slurm-rpms/* -y
 
 #metadata configuration
-sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
-sudo cp /scratch/slurmdbd.conf /etc/slurm/slurmdbd.conf
+sudo cp /local/repository/slurm.conf /etc/slurm/slurm.conf
+sudo cp /local/repository/slurmdbd.conf /etc/slurm/slurmdbd.conf
 sudo mkdir /var/spool/slurmdbd
 sudo chown slurm: /var/spool/slurmdbd
 sudo chmod 755 /var/spool/slurmdbd
@@ -55,7 +36,7 @@ sudo chmod 755 /var/log/slurmdbd.log
 sudo touch /var/run/slurmdbd.pid
 sudo chown slurm: /var/run/slurmdbd.pid
 sudo chmod 777 /var/run/slurmdbd.pid
-sudo cp /scratch/innodb.cnf /etc/my.cnf.d/innodb.cnf
+sudo cp /local/repository/innodb.cnf /etc/my.cnf.d/innodb.cnf
 sudo chown slurm: /etc/my.cnf.d/innodb.cnf
 sudo chmod 777 /etc/my.cnf.d/innodb.cnf
 
@@ -63,8 +44,8 @@ sudo chmod 777 /etc/my.cnf.d/innodb.cnf
 sudo systemctl start mariadb 
 sudo systemctl enable mariadb 
 
-sudo mysql  -sfu root < "/scratch/setup.sql"
-sudo mysql "-psecret" < "/scratch/dbd.sql"
+sudo mysql  -sfu root < "/local/repository/setup.sql"
+sudo mysql "-psecret" < "/local/repository/dbd.sql"
 
 #setup clock
 sudo yum install ntp -y
