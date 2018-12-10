@@ -17,3 +17,5 @@ ssh 192.168.1.5 sudo systemctl enable munge
 ssh 192.168.1.5 sudo systemctl start munge
 ssh 192.168.1.6 sudo systemctl enable munge
 ssh 192.168.1.6 sudo systemctl start munge
+sudo systemctl enable munge
+sudo systemctl start munge
