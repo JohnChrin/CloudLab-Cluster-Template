@@ -5,7 +5,6 @@ cd ~/slurm && sudo yum install rpm-build
 cd ~/slurm && sudo rpmbuild -ta slurm-18.08.3.tar.bz2
 sudo mkdir /scratch/slurm-rpms
 sudo cp /root/rpmbuild/RPMS/x86_64/* /scratch/slurm-rpms
-sudo touch /scratch/rpm.fin
 sudo yum --nogpgcheck localinstall /software/slurm-rpms/* -y
 sudo mkdir /var/spool/slurmd
 sudo chown slurm: /var/spool/slurmd
