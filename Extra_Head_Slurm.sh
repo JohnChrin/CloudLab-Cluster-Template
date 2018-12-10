@@ -10,11 +10,11 @@ sudo yum --nogpgcheck localinstall /scratch/slurm-rpms/* -y
 sudo cp /local/repository/Becca_Slurm_Conf /scratch/slurm.conf
 sudo mkdir /etc/slurm/ && sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
 ssh 192.168.1.4 sudo mkdir /etc/slurm/
-ssh 192.168.1.4 sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
+ssh 192.168.1.4 sudo cp /local/repository/Becca_Slurm_Conf /scratch/slurm.conf
 ssh 192.168.1.5 sudo mkdir /etc/slurm/
-ssh 192.168.1.5 sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
+ssh 192.168.1.5 sudo cp /local/repository/Becca_Slurm_Conf /scratch/slurm.conf
 ssh 192.168.1.6 sudo mkdir /etc/slurm/
-ssh 192.168.1.6 sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
+ssh 192.168.1.6 sudo cp /local/repository/Becca_Slurm_Conf /scratch/slurm.conf
 #MAKE SURE THE TIMING ON THIS IS GOOD, slumd MUST BE THERE FIRST
 sudo mkdir /var/spool/slurmctld
 sudo chown slurm: /var/spool/slurmctld
@@ -29,5 +29,5 @@ sudo yum install ntp -y
 sudo chkconfig ntpd on
 sudo ntpdate pool.ntp.org
 sudo systemctl start ntpd
-sudo systemctl enable slurmd.service
-sudo systemctl start slurmd.service
+sudo systemctl enable slurmctld.service
+sudo systemctl start slurmctld.service
