@@ -15,6 +15,11 @@ sudo yum install ntp -y
 sudo chkconfig ntpd on
 sudo ntpdate pool.ntp.org
 sudo systemctl start ntpd
+#enable slurm daemon while credit to GJBarretta
+while [ ! -f /scratch/dbd.fin ]
+do
+  sleep 5
+done
 sudo systemctl enable slurmd.service
 sudo systemctl start slurmd.service
 sudo systemctl status slurmd.service
