@@ -14,15 +14,39 @@ sudo useradd  -m -c "SLURM workload manager" -d /var/lib/slurm -u $SLURMUSER -g 
 sudo yum install epel-release -y
 sudo yum install munge munge-libs munge-devel -y
 
+#get secret key from head and pass to etc/munge
+while [ ! -f /scratch/munge.key ]
+do
+  sleep 5
+done
+sudo cp /scratch/munge.key /etc/munge/munge.key
+sudo chown munge: /etc/munge/munge.key
+sudo chmod 400 /etc/munge/munge.key
+
+#correct permissions
+sudo chown -R munge: /etc/munge/ /var/log/munge/
+sudo chmod 0700 /etc/munge/ /var/log/munge/
+
+sleep 120
+sudo touch /scratch/metakey.fin
+
+#start munge service
+sudo systemctl enable munge
+sudo systemctl start munge
+
 #install slurm dependencies
-cd ~ && sudo yum install rpm-build gcc openssl openssl-devel libssh2-devel pam-devel numactl numactl-devel hwloc hwloc-devel lua lua-devel readline-devel rrdtool-devel ncurses-devel gtk2-devel man2html libibmad libibumad perl-Switch perl-ExtUtils-MakeMaker -y
-cd ~ && sudo mkdir slurm
+#cd ~ && sudo yum install rpm-build gcc openssl openssl-devel libssh2-devel pam-devel numactl numactl-devel hwloc hwloc-devel lua lua-devel readline-devel rrdtool-devel ncurses-devel gtk2-devel man2html libibmad libibumad perl-Switch perl-ExtUtils-MakeMaker -y
+#cd ~ && sudo mkdir slurm
 #cd ~/slurm && sudo wget http://www.schedmd.com/download/latest/slurm-18.08.4.tar.bz2
-cd ~/slurm && sudo yum install rpm-build
-cd ~/slurm && sudo rpmbuild -ta /local/repository/slurm-18.08.4.tar.bz2
+#cd ~/slurm && sudo yum install rpm-build
+#cd ~/slurm && sudo rpmbuild -ta /local/repository/slurm-18.08.4.tar.bz2
 #sudo mkdir /scratch/slurm-rpms
 #sudo cp /root/rpmbuild/RPMS/x86_64/* /scratch/slurm-rpms
-sudo yum --nogpgcheck localinstall /root/rpmbuild/RPMS/x86_64/* -y
+while [ ! -f /scratch/rpm.fin ]
+do
+  sleep 10
+done
+sudo yum --nogpgcheck localinstall /scratch/slurm-rpms/* -y
 
 #metadata configuration
 sudo cp /local/repository/slurm.conf /etc/slurm/slurm.conf
@@ -61,10 +85,10 @@ sudo systemctl start slurmdbd
 sudo touch /scratch/dbd.fin
 
 #wait for callback from head node
-#while [ ! -f /scratch/head.fin ]
-#do
-#  sleep 5
-#done
+while [ ! -f /scratch/head.fin ]
+do
+  sleep 5
+done
 
 #add cluster
 yes | sudo sacctmgr add cluster cluster
