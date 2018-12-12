@@ -8,7 +8,8 @@ sudo cp /root/rpmbuild/RPMS/x86_64/* /scratch/slurm-rpms
 sudo touch /scratch/rpm.fin
 sudo yum --nogpgcheck localinstall /scratch/slurm-rpms/* -y
 sudo cp /local/repository/Becca_Slurm_Conf /scratch/slurm.conf
-sudo mkdir /etc/slurm/ && sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
+sudo mkdir /etc/slurm/ 
+sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
 ssh 192.168.1.4 sudo mkdir /etc/slurm/
 ssh 192.168.1.4 sudo cp /local/repository/Becca_Slurm_Conf /scratch/slurm.conf
 ssh 192.168.1.5 sudo mkdir /etc/slurm/
