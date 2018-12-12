@@ -9,3 +9,22 @@ sudo useradd -m -c "SLURM workload manager" -d /var/lib/slurm -u $SLURMUSER -g s
 sudo yum install epel-release -y
 sudo yum install munge munge-libs munge-devel -y
 sudo yum install rng-tools -y
+sudo mkdir /etc/munge/
+#wait until head creates secret key and pass to etc/munge
+while [ ! -f /scratch/munge.key ]
+do
+  sleep 10
+done
+#correct permissions
+sudo chown -R munge: /etc/munge/ /var/log/munge/
+sudo chmod 0700 /etc/munge/ /var/log/munge/
+while [ ! -f /scratch/metakey.fin ]
+do
+  sleep 10
+done
+sudo cp /scratch/munge.key /etc/munge/munge.key
+sudo chown 991 /etc/munge/munge.key
+##sudo chmod 400 /etc/munge/munge.key
+#start munge service
+sudo systemctl enable munge
+sudo systemctl start munge
