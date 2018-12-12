@@ -49,6 +49,7 @@ done
 sudo yum --nogpgcheck localinstall /scratch/slurm-rpms/* -y
 
 #metadata configuration
+sudo mkdir /etc/slurm
 sudo cp /local/repository/Becca_Slurm_Conf /etc/slurm/slurm.conf
 sudo cp /local/repository/slurmdbd.conf /etc/slurm/slurmdbd.conf
 sudo mkdir /var/spool/slurmdbd
