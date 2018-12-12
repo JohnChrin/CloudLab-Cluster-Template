@@ -61,13 +61,13 @@ sudo systemctl start slurmdbd
 sudo touch /scratch/dbd.fin
 
 #wait for callback from head node
-while [ ! -f /scratch/head.fin ]
-do
-  sleep 5
-done
+#while [ ! -f /scratch/head.fin ]
+#do
+#  sleep 5
+#done
 
 #add cluster
 yes | sudo sacctmgr add cluster cluster
 
 #notify head node cluster has been added
-sudo touch /scratch/cluster.fin
+#sudo touch /scratch/cluster.fin
