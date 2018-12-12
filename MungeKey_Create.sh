@@ -1,5 +1,6 @@
 #THIS IS FOR THE HEAD NODE ONLY
-sudo /usr/sbin/create-munge-key -r
+#WARNING: the command below may hang, useage of -r has caused this previously.
+sudo /usr/sbin/create-munge-key -f
 sudo chmod 777 /etc/munge/munge.key
 sudo su root -c 'dd if=/dev/urandom bs=1 count=1024 > /etc/munge/munge.key'
 sudo chmod 700 /etc/munge/munge.key
