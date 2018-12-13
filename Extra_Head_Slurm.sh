@@ -11,6 +11,7 @@ sudo yum --nogpgcheck localinstall /scratch/slurm-rpms/* -y
 sudo cp /local/repository/Becca_Slurm_Conf /scratch/slurm.conf
 sudo mkdir /etc/slurm/ 
 sudo cp /scratch/slurm.conf /etc/slurm/slurm.conf
+sudo firewall-cmd --add-port=6817-6818/tcp
 #ssh 192.168.1.4 sudo mkdir /etc/slurm/
 #ssh 192.168.1.4 sudo cp /local/repository/Becca_Slurm_Conf /etc/slurm/slurm.conf
 #ssh 192.168.1.5 sudo mkdir /etc/slurm/
