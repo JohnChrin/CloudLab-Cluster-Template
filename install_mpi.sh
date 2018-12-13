@@ -14,3 +14,4 @@ cd ..
 sudo rm -Rf openmpi-3.1.2
 sudo rm -Rf openmpi-3.1.2.tar.gz
 source /users/BW840606/.bashrc
+sudo su root -c 'echo 'PATH="/software/openmpi/3.1.2/bin:$PATH"' >> /etc/environment'
