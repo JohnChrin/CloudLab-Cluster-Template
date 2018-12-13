@@ -12,7 +12,7 @@ do
 done
 sudo yum --nogpgcheck localinstall /scratch/slurm-rpms/* -y
 sudo mkdir /etc/slurm
-cp /local/repository/Becca_Slurm_Conf /etc/slurm/slurm.conf
+sudo cp /local/repository/Becca_Slurm_Conf /etc/slurm/slurm.conf
 sudo mkdir /var/spool/slurmd
 sudo chown slurm: /var/spool/slurmd
 sudo chmod 755 /var/spool/slurmd
