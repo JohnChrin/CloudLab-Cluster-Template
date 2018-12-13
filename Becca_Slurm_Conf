@@ -9,7 +9,7 @@
 #
 ClusterName=cluster
 ControlMachine=head
-#ControlAddr=
+ControlAddr=192.168.1.1
 #BackupController=
 #BackupAddr=
 #
@@ -88,7 +88,7 @@ AccountingStorageHost=metadata
 #AccountingStorageUser=
 #
 # COMPUTE NODES
-NodeName=linux-[1-32] Procs=1 State=UNKNOWN
+NodeName=linux[1-32] Procs=1 State=UNKNOWN
 NodeName=metadata NodeAddr=192.168.1.2 CPUs=2 State=UNKNOWN
 NodeName=compute-1 NodeAddr=192.168.1.4 CPUs=2 State=UNKNOWN
 NodeName=compute-2 NodeAddr=192.168.1.5 CPUs=2 State=UNKNOWN
