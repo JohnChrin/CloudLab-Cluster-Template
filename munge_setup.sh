@@ -15,6 +15,9 @@ while [ ! -f /scratch/munge.key ]
 do
   sleep 10
 done
+sudo cp /scratch/munge.key /etc/munge/munge.key
+sudo chown 991 /etc/munge/munge.key
+sudo chmod 400 /etc/munge/munge.key
 #correct permissions
 sudo chown -R munge: /etc/munge/ /var/log/munge/
 sudo chmod 0700 /etc/munge/ /var/log/munge/
@@ -22,9 +25,6 @@ while [ ! -f /scratch/metakey.fin ]
 do
   sleep 10
 done
-sudo cp /scratch/munge.key /etc/munge/munge.key
-sudo chown 991 /etc/munge/munge.key
-##sudo chmod 400 /etc/munge/munge.key
 #start munge service
 sudo systemctl enable munge
 sudo systemctl start munge
