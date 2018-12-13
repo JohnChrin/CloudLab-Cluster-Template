@@ -27,7 +27,6 @@ while [ ! -f /scratch/dbd.fin ]
 do
   sleep 5
 done
-sudo systemctl enable slurmd.service
-sudo systemctl start slurmd.service
-#sudo systemctl status slurmd.service
+sudo systemctl enable slurmd
+sudo systemctl start slurmd
 sudo touch /scratch/d.fin
