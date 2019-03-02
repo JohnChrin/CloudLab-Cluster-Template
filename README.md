@@ -31,6 +31,7 @@ More specifically, this repository via profile.py (Python code) creates the foll
 * storage node (1) - Stores pre-sorted and post-sorted data.
 * head node (1) - Distributes instructions to the compute nodes on how to communicate. (Supervisor/Leader)
 * compute node (12) - Receives a portion of unsorted data and sorts it following the head node’s instructions. (Worker)
+
 Then it installs CentOS7 (Linux distribution) on these nodes. From this point forward the entire project was an experiment in installation, configuration, and utilization of parallel computing related software tools that were all configured to be installed via Linux commands, C code, and a few text files.
 
 ## Tools Used
