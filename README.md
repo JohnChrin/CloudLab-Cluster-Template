@@ -42,7 +42,7 @@ Then it installs CentOS7 (Linux distribution) on these nodes. From this point fo
 
 [VirtualBox]( https://www.virtualbox.org/) - Software hypervisor designed to allow you to host your own virtual computers on-top of your current operating system. ???
 
-[Jupyter]( https://jupyter.org/) - Technically the tool in question is the Jupyter Notebook Application, but Jupyter in general is a collaboration tool that exists as a webpage. The webpage contains code and text shared by everyone in the group. The notebook can even be hosted on GitHub (acting as a server). For the purposes of this course, the class’s notes and sample code was all hosted via a Jupyter notebook. 
+[Jupyter]( https://jupyter.org/) - Technically the tool in question is the Jupyter Notebook Application, but Jupyter in general is a collaboration tool that exists as a webpage. The webpage contains code and text shared by everyone in the group. The notebook can even be hosted on GitHub (acting as a server). For the purposes of this course, the class’s notes and sample code were all hosted via a Jupyter notebook. 
 
 [MariaDB](https://mariadb.org/about/) - An open source fork of MySQL, which are both Relational Database Management Systems (RDBMS). Simply put, a place to hold information that is organized/interconnected by relationships. Think of a collection of tables of information. 
 
