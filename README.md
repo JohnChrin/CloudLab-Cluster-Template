@@ -34,7 +34,7 @@ More specifically, this repository via profile.py (Python code) creates the foll
 Then it installs CentOS7 (Linux distribution) on these nodes. From this point forward the entire project was an experiment in installation, configuration, and utilization of parallel computing related software tools that were all configured to be installed via Linux commands, C code, and a few text files.
 
 ## Tools Used
-[CloudLab](https://www.cloudlab.us/) - Gateway access to geographically distributed compute resources (memory/processing power) that allows the creation of a virtual cloud of computers/servers while also visual displaying them for easy configuration and experimentation. 
+[CloudLab](https://www.cloudlab.us/) - Gateway access to geographically distributed compute resources (memory/processing power) that allows the creation of a virtual cloud of computers/servers while also visually displaying them for easy configuration and experimentation. 
 
 [GENI]() - [geni-lib]( https://geni-lib.readthedocs.io/en/latest/intro/intro.html) - Global Environment for Network Innovations - A software infrastructure suite that allows the programmatic configuration and control of all aspects of a parallel computing network (all the nodes in a network). Geni-lib is a Python library that utilizes the GENI software infrastructure suite. 
 
