@@ -40,7 +40,7 @@ Then it installs CentOS7 (Linux distribution) on these nodes. From this point fo
 
 [Xen]( https://xenproject.org/about-us/) - An open source hypervisor (popular enough to be included in the Linux kernel by default). We utilize Xen through a geni-lib library Class called XenVM, which allows us to draft up nodes (hosts/clients/virtual computers…)
 
-[VirtualBox]( https://www.virtualbox.org/) - Software designed to allow you to host your own virtual computers on-top of your current operating system. ???
+[VirtualBox]( https://www.virtualbox.org/) - Software hypervisor designed to allow you to host your own virtual computers on-top of your current operating system. ???
 
 [Jupyter]( https://jupyter.org/) - Technically the tool in question is the Jupyter Notebook Application, but Jupyter in general is a collaboration tool that exists as a webpage. The webpage contains code and text shared by everyone in the group. The notebook can even be hosted on GitHub (acting as a server). For the purposes of this course, the class’s notes and sample code was all hosted via a Jupyter notebook. 
 
