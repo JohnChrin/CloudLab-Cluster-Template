@@ -5,7 +5,7 @@ Parallel Computing Project - Utilizing geographically distributed computing reso
 <b>Group Project:</b> \
 Becca - beccabuoni \
 Ben - bwal213 \
-John - Spades86
+John - JohnChrin
 
 ## Table of Contents
 * [What & Why Parallel Computing]() - Answers the question of Parallel Computing.
