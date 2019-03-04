@@ -93,3 +93,22 @@ metadata	https://dataedo.com/kb/data-glossary/what-is-metadata
 CentOS7	https://en.wikipedia.org/wiki/CentOS
 Linux	https://www.linux.com/what-is-linux
 distribution	https://en.wikipedia.org/wiki/Linux_distribution
+
+
+[GENI]( https://www.geni.net/about-geni/what-is-geni/) - Global Environment for Network Innovations - An infrastructure suite (grouping of hardware) that also allows the programmatic configuration and control of all aspects of that hardware for cloud computing experiment purposes.
+GENI, simply put, is two things: 
+ * One, a logical merging of bare-metal compute resources (memory/processing power) that are geographically distributed throughout the United States. 
+ * Two, a grouping of tools to interface with these compute resources all the way down to the bare-metal level of configurability.
+[geni-lib]( https://geni-lib.readthedocs.io/en/latest/intro/intro.html) - is a Python library that allows interaction with and configuration of GENI’s compute resources. We will write a file called ‘profile.py’ which will contain and use geni-lib functions and then it will be instantiated through a CloudLab profile, where both will interface with GENI to create the collection of virtual computers that we want for our experiment.
+
+[CloudLab](https://www.cloudlab.us/) - “Gateway access” to geographically distributed compute resources (memory/processing power from GENI) that allows the creation of a virtual cloud of computers/servers while also visually displaying them for easy configuration and experimentation. 
+CloudLab is basically a layer of visual user friendliness on-top of GENI. The key feature that CloudLab adds is called the profile system. You can create a profile (experiment template; think of a computer image but for multiple computers all at once) that can be initialized many times under different experiment names (arbitrary labels that you decide) to create many versions of the same cloud of computers environment (typically this virtual cloud of computers is used for parallel computing). 
+
+
+[Hadoop]( https://www.bernardmarr.com/default.asp?contentID=1080) - A group of 4 modules/tools that all work together to analyze large amounts of information (such as identifying how many times the word “potato” appears in 1000 books). 
+[Hadoop MapReduce]( https://docs.marklogic.com/guide/mapreduce/hadoop#id_73616) - is a software framework of Hadoop (one of the modules/tools) that is comprised of two steps:
+ * The map step consists of reading the data and formatting (mapping) it to be analyzed. The master/head node divides up the formatted data into sub-problems and sends them to the worker nodes.
+ * The master/head node receives answers to all of the sub-problems and combines them to produce output.
+
+[MPI](http://mpitutorial.com/tutorials/mpi-introduction/) - [OMPI]( https://www.open-mpi.org/) - Message Passing Interface / Open Message Passing Interface - As simple as it sounds, it passes messages. Allows the sending of instructions to-and-from nodes to help them pseudo operate as a single entity (compute resource). The OMPI variant is just the open source version. MPI is used as a library in C, so we test it’s functionality by creating a test written in C.
+
