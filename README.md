@@ -75,3 +75,21 @@ Then it installs CentOS7 (Linux distribution) on these nodes. From this point fo
 * [slurmdbd.conf]() 
 * [source_client.sh]()
 * [ssh_setup.sh]() 
+
+
+
+https://github.com/beccabuoni
+https://github.com/bwal213
+parallel computing   https://en.wikipedia.org/wiki/Parallel_computing
+Git	https://www.atlassian.com/git/tutorials/what-is-git
+repository	https://www.dictionary.com/browse/repository
+CloudLab	https://www.cloudlab.us/
+virtual computers	https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/
+MPI	http://mpitutorial.com/tutorials/mpi-introduction/
+MariaDB	https://mariadb.org/about/
+SlurmDBD	https://slurm.schedmd.com/overview.html
+Hadoop MapReduce	https://docs.marklogic.com/guide/mapreduce/hadoop#id_73616
+metadata	https://dataedo.com/kb/data-glossary/what-is-metadata
+CentOS7	https://en.wikipedia.org/wiki/CentOS
+Linux	https://www.linux.com/what-is-linux
+distribution	https://en.wikipedia.org/wiki/Linux_distribution
