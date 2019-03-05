@@ -110,5 +110,5 @@ CloudLab is basically a layer of visual user friendliness on-top of GENI. The ke
  * The map step consists of reading the data and formatting (mapping) it to be analyzed. The master/head node divides up the formatted data into sub-problems and sends them to the worker nodes.
  * The master/head node receives answers to all of the sub-problems and combines them to produce output.
 
-[MPI](http://mpitutorial.com/tutorials/mpi-introduction/) - [OMPI]( https://www.open-mpi.org/) - Message Passing Interface / Open Message Passing Interface - As simple as it sounds, it passes messages. Allows the sending of instructions to-and-from nodes to help them pseudo operate as a single entity (compute resource). The OMPI variant is just the open source version. MPI is used as a library in C, so we test it’s functionality by creating a test written in C.
+[MPI](http://mpitutorial.com/tutorials/mpi-introduction/) - [OMPI]( https://www.open-mpi.org/) - Message Passing Interface / Open Message Passing Interface - As simple as it sounds, it passes messages. Allows the sending of instructions to-and-from nodes to help them pseudo operate as a single entity (compute resource). The OMPI variant is just the open source version. MPI is used as a library in C, so we test it’s functionality by creating a test written in C..
 
